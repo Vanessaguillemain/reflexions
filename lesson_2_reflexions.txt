@@ -1,25 +1,38 @@
-What happens when you initialize a repository? Why do you need to do it?
+- What happens when you initialize a repository? Why do you need to do it?
 
 Un répertoire caché .git est créé. Git peut suivre les fichiers. 
 On doit le faire pour que Git sache qu'il doit suivre ce répertoire.
 Qu'il puisse y avoir un suivi des commits.
 
-How is the staging area different from the working directory and the repository?
+- How is the staging area different from the working directory and the repository?
 What value do you think it offers?
 
 La staging area est une zone de travail de Git, Git sait qu'il doit surveiller les modifications de ce qui s'y trouve (?)
 Le repo, lui, contient des snapshots. Ce la offre de la liberté de travail, on modifie sans crainte et on ne commit que quand l'état est "propre".
 
-How can you use the staging area to make sure you have one commit per logical
+- How can you use the staging area to make sure you have one commit per logical
 change?
 
-What are some situations when branches would be helpful in keeping your history
+On peut ne mettre dans la Staging Area que les modifications en relation avec
+Un changement logique (?)
+
+- What are some situations when branches would be helpful in keeping your history
 organized? How would branches help?
 
-How do the diagrams help you visualize the branch structure?
+Développer une nouvelle grosse fonctionnalité quand on est à plusieurs sur le projet : pas de problème si on doit faire plusieurs commits pour cette fonctionnalité.
+Tester du code expérimental : on ne modifie pas le code principal.
 
-What is the result of merging two branches together? Why do we represent it in
+
+- How do the diagrams help you visualize the branch structure?
+
+- What is the result of merging two branches together? Why do we represent it in
 the diagram the way we do?
 
-What are the pros and cons of Git's automatic merging vs. always doing merges
+Le résultat du merge est un commit qui contient toutes les modifications de l’autre branche, ajouté à l’état de la branche en cours.
+On le représente de cette façon parce qu’il y a fusion, un nouveau commit, et depuis ce commit de merge on peut remonter aux 2 chemins par les parents.
+
+- What are the pros and cons of Git's automatic merging vs. always doing merges
 manually?
+
+Pour : il y a de nombreuses situations où Git peut faire le merge automatiquement ce qui fait gagner beaucoup de temps, et même, peut éviter des erreurs humaines de merge.
+Contre : pas de contre.
